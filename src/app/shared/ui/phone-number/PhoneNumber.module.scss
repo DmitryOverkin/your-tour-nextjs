@@ -1,0 +1,65 @@
+@import "../../../styles/base/variables.scss";
+
+.header__contact-link {
+  position: relative;
+  text-decoration: none;
+  color: $white;
+  @include regular-text;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    display: block;
+    background-color: $white;
+    content: "";
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    width: 100%;
+  }
+
+  &--scroll {
+    color: $black;
+
+    &::after {
+      background-color: $black;
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .header__contact-link {
+    font-size: $size-16;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__contact-link {
+    font-size: $size-20;
+  }
+}
+
+@media (max-width: 550px) {
+  .header__contact-link {
+    font-size: $size-16;
+  }
+}
+
+@media (hover: none) {
+  .header__contact-link::after {
+    width: 0;
+    transition: none;
+  }
+
+  .header__contact-link:hover::after,
+  .header__contact-link:focus::after {
+    width: 0;
+  }
+}
+
+// ========

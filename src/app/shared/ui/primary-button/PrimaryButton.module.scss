@@ -1,0 +1,50 @@
+@import "../../../styles/base/variables.scss";
+
+.header__btn {
+  width: 118px;
+  height: 34px;
+  border: none;
+  border-radius: 10px;
+  background: $white;
+  font-size: $size-17;
+  line-height: 142%;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $orange-200;
+  }
+
+  &:active {
+    background-color: $orange-100;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header__btn {
+    height: 33px;
+    padding: 4px 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header__btn {
+    width: 115px;
+    height: 34px;
+    padding: 5px 15px;
+    letter-spacing: -0.04em;
+  }
+}
+
+@media (hover: none) {
+  .header__btn {
+    &:hover {
+      background-color: $white;
+    }
+
+    &:active {
+      background-color: $orange-100;
+    }
+  }
+}

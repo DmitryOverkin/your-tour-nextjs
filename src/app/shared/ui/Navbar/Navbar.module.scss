@@ -1,0 +1,78 @@
+@import "../../../styles/base/variables.scss";
+
+.header__nav {
+  &-list {
+    display: flex;
+    gap: 50px;
+  }
+
+  &-link {
+    position: relative;
+    text-decoration: none;
+    color: $white;
+    @include regular-text;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 2px;
+      display: block;
+      background-color: $white;
+      content: "";
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      width: 100%;
+    }
+
+    &--scroll {
+      color: $black;
+
+      &::after {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header__nav {
+    &-list {
+      gap: 30px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .header__nav-link {
+    font-size: $size-16;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__nav {
+      display: none;
+    }
+  }
+}
+
+@media (hover: none) {
+  .header__nav-link {
+    &::after {
+      width: 0;
+      transition: none;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      width: 0;
+    }
+  }
+}
+
+// ================
