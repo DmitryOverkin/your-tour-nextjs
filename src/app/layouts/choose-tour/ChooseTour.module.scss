@@ -1,0 +1,34 @@
+@import "../../styles/base/variables";
+
+.choose-tour {
+  padding-top: 135px;
+
+  &__heading {
+    margin-bottom: 35px;
+    @include h2;
+  }
+}
+
+@media (max-width: 768px) {
+  .choose-tour {
+    padding-top: 75px;
+
+    &__heading {
+      font-size: $size-35;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .choose-tour {
+    padding-top: 74px;
+
+    &__heading {
+      margin-bottom: 28px;
+      font-size: $size-34;
+      letter-spacing: 0.02em;
+    }
+  }
+}
+
+// =================

@@ -8,13 +8,13 @@ interface INavItem {
   href: string;
 }
 
-type IProps = {
+type TProps = {
   items: INavItem[];
   color?: string;
   fontSize?: string;
 };
 
-export default function Navbar({items, color, fontSize}: IProps) {
+export default function Navbar({items, color, fontSize}: TProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
